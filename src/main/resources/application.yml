@@ -1,0 +1,33 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: config
+  cloud:
+    config:
+      server:
+        git:
+          uri: git@github.com:shenshuaihu/SpringCloud_Sell-config.git
+          basedir: D:\MyFile\Develop\IDEA\demo\SpringCloud_imooc\config\target\dir
+  rabbitmq:
+    host: 192.168.99.100
+    port: 5672
+    username: guest
+    password: guest
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"      # 暴露所有接口
+      cors:
+        allowed-origins: "*"
+        allowed-methods: "*"
+
+eureka:
+  instance:
+    hostname: 127.0.0.1
+  client:
+    service-url:
+      defaultZone: http://127.0.0.1:8761/eureka
