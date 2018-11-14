@@ -8,10 +8,12 @@ spring:
     config:
       server:
         git:
-          uri: git@github.com:shenshuaihu/SpringCloud_Sell-config.git
-          basedir: D:\MyFile\Develop\IDEA\demo\SpringCloud_imooc\config\target\dir
+          uri: https://github.com/shenshuaihu/SpringCloud_Sell-config.git
+          basedir: /file/docker/log/demo/config/dir
+          username: shen_shuaihu@163.com
+          password: shenshuihu0
   rabbitmq:
-    host: 192.168.99.100
+    host: 212.64.11.85
     port: 5672
     username: guest
     password: guest
@@ -26,8 +28,8 @@ management:
         allowed-methods: "*"
 
 eureka:
-  instance:
-    hostname: 127.0.0.1
   client:
     service-url:
-      defaultZone: http://127.0.0.1:8761/eureka
+      defaultZone: http://sell-eureka1:8761/eureka,http://sell-eureka2:8762/eureka
+  instance:
+    prefer-ip-address: true
